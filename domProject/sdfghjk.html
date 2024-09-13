@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Go My Code</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <center>
+      <h1>Facture de Vente</h1>
+
+      <!-- Formulaire pour entrer la valeur de x -->
+      <h1>Entrée</h1>
+      <textarea id="x" placeholder="Entrez la valeur de x"></textarea>
+
+      <!-- Formulaire pour entrer la valeur de y -->
+      <h1>Sortie</h1>
+      <textarea id="y" placeholder="Entrez la valeur de y"></textarea>
+
+      <!-- Bouton pour calculer le résultat -->
+      <br />
+      <button onclick="calculerResultat()">Cliquer ici</button>
+
+      <!-- Formulaire pour afficher le résultat -->
+      <h1>Total</h1>
+      <textarea
+        id="resultat"
+        readonly
+        placeholder="Le résultat apparaîtra ici"
+      ></textarea>
+    </center>
+
+    <script>
+      function calculerResultat() {
+        // Récupérer les valeurs de x et y et les convertir en nombres
+        const x = parseFloat(document.getElementById("x").value);
+        const y = parseFloat(document.getElementById("y").value);
+
+        // Vérifier que les entrées sont des nombres valides
+        if (isNaN(x) || isNaN(y)) {
+          alert("Veuillez entrer des nombres valides pour x et y.");
+          return;
+        }
+
+        // Calculer le résultat de x + y
+        const resultat = x + y;
+
+        // Afficher le résultat dans le champ de texte 'resultat'
+        document.getElementById("resultat").value =
+          "Le résultat de x + y est : " + resultat;
+      }
+    </script>
+  </body>
+</html>
